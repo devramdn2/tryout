@@ -1,0 +1,140 @@
+/* ========================================
+   PusatKas - Centralized Global Styles
+   ======================================== */
+
+/* Focus ring for all inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1A4B85 !important;
+  box-shadow: 0 0 0 3px rgba(26, 75, 133, 0.12);
+}
+
+/* Smooth transitions on interactive elements */
+button,
+a,
+input,
+select,
+textarea {
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar - Dark Mode (default) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0B0F19; }
+::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+
+/* Scrollbar - Light Mode */
+body.light ::-webkit-scrollbar-track { background: #F1F5F9; }
+body.light ::-webkit-scrollbar-thumb { background: #CBD5E1; }
+
+/* Prevent layout shift on page load */
+html { scroll-behavior: smooth; }
+
+/* Disable scrollbar on mobile menu */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Card hover effect utility */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(26, 75, 133, 0.15);
+}
+
+/* Spinner animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Fade transitions */
+.fade-enter-active { transition: all 0.3s ease; }
+.fade-leave-active { transition: all 0.2s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(-4px); }
+
+/* Slide transitions */
+.slide-enter-active, .slide-leave-active { transition: all 0.25s ease; overflow: hidden; }
+.slide-enter-from, .slide-leave-to { max-height: 0; opacity: 0; }
+.slide-enter-to, .slide-leave-from { max-height: 500px; opacity: 1; }
+
+/* Modal transitions */
+.modal-enter-active { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.modal-leave-active { transition: all 0.2s ease; }
+.modal-enter-from, .modal-leave-to { opacity: 0; }
+
+/* Dropdown transitions */
+.dropdown-enter-active, .dropdown-leave-active { transition: all 0.2s cubic-bezier(0.4,0,0.2,1); }
+.dropdown-enter-from, .dropdown-leave-to { opacity: 0; transform: translateY(-8px) scale(0.95); }
+
+/* ========================================
+   Google Translate Widget Overrides
+   (Aggressive multi-layer suppression)
+   ======================================== */
+
+/* 1. Force html and body to default top position */
+html, body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* 2. Hide all Google Translate banner iframes */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe[id*=":1.container"],
+iframe[class*="goog-te-banner-frame"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0px !important;
+  width: 0px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* 3. Hide translation toolbar elements */
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-gadget,
+.goog-te-spinner-pos {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* 4. Remove text highlights from translated content */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 5. Force translate menu frame styling */
+.goog-te-menu-frame {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+  border-radius: 0.5rem !important;
+}
+
+/* 6. Hide the hidden translate element container */
+#google_translate_element {
+  position: absolute !important;
+  left: -9999px !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 7. Prevent body from shifting down */
+body.translated-ltr,
+body.translated-rtl {
+  top: 0px !important;
+  margin-top: 0px !important;
+}
+
+/* 8. Override Google Translate's body style injection */
+html.translated-ltr,
+html.translated-rtl {
+  top: 0px !important;
+}
