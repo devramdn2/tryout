@@ -1,0 +1,150 @@
+@import './style.css';
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+// Login sidebar
+.side-bar-login {
+    overflow: hidden;
+    img::before{
+        position: absolute;
+        content: '';
+        background: linear-gradient(149deg, rgba(7, 175, 237, 0.40) 0%, rgba(7, 175, 237, 0.00) 100%);
+        width: 200px;
+        height: 200px;
+        pointer-events: none;
+    }
+    img {
+        height: 1024px;
+    }
+
+}
+
+// form login
+.bundle-form-login {
+    padding-top: 60px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 64px;
+
+    .row-form-login{
+        height: 80px;
+        vertical-align: center;
+
+        p {
+            color: #9E9E9E;
+            text-align: right;
+            // height: 80px;
+            /* Body/3/Regular */
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            align-items: center;
+            vertical-align: center;
+            justify-content: center;
+            
+    
+            span{
+                color: #24DAB9;
+                text-align: right;
+                /* Body/3/Regular */
+                font-family: Inter;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        }
+        
+    }
+
+    .title-form-login{
+        color: var(--neutral-109, #404040);
+        font-family: Inter;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px;
+        margin-top: 40px;
+    }
+    p.desc-form-login{
+        color: var(--neutral-106, #9E9E9E);
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+    }
+
+    .form-login{
+        input.form-control {
+            background-color: #F7F7F7;
+        }
+
+        input.form-control::placeholder{
+            color: var(--neutral-105, #C2C2C2);
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        #show-password::after {
+            position: absolute;
+            height: 3rem;
+            width: 3rem;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            right: 0rem;
+            content: "";
+            background-size: contain;
+        }
+    }
+    
+}
+
+// Tablet
+@media screen and (max-width: 890px) {
+    // Login Sidebar
+    .side-bar-login {
+        overflow: hidden;
+        img {
+            height: 890px;
+        }
+    }
+
+    // Login Form
+}
+
+// Handphone Android
+@media screen and (max-width: 680px) {
+    // Login Sidebar
+    .side-bar-login {
+        overflow: hidden;
+        img {
+            height: 680px;
+        }
+    }
+
+    // Login Form
+}
+
+// Handphone Mini
+@media screen and (max-width: 450px) {
+    // Login Sidebar
+    .side-bar-login {
+        overflow: hidden;
+        img {
+            height: 450px;
+        }
+    }
+
+    // Login Form
+}
+
+
